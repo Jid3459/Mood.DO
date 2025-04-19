@@ -1,0 +1,142 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode Variables with new color scheme */
+    --background: 220 33% 98%;    /* #F5F7FA */
+    --foreground: 0 0% 18%;       /* #2D2D2D */
+    --card: 203 27% 67%;          /* #8EB1C7 */
+    --card-foreground: 0 0% 18%;  /* #2D2D2D */
+    --popover: 220 33% 98%;       /* #F5F7FA */
+    --popover-foreground: 0 0% 18%; /* #2D2D2D */
+    --primary: 114 53% 55%;       /* #6BBF59 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 35% 47%;     /* #4A6FA5 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 203 27% 67%;         /* #8EB1C7 */
+    --muted-foreground: 0 0% 18%; /* #2D2D2D */
+    --accent: 203 27% 67%;        /* #8EB1C7 */
+    --accent-foreground: 0 0% 18%; /* #2D2D2D */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 203 27% 67%;        /* #8EB1C7 */
+    --input: 203 27% 67%;         /* #8EB1C7 */
+    --ring: 114 53% 55%;          /* #6BBF59 */
+    --radius: 1rem;
+  }
+
+  [data-theme="dark"] {
+    /* Dark Mode Variables */
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@font-face {
+  font-family: 'SF Rounded';
+  src: local('SF Pro Rounded');
+}
+
+.font-rounded {
+  font-family: 'SF Rounded', system-ui, -apple-system, sans-serif;
+}
+
+.font-display {
+  font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+}
+
+.mood-card {
+  @apply relative overflow-hidden rounded-2xl p-6 transition-all duration-300;
+}
+
+.mood-card-light {
+  @apply bg-[#8EB1C7] text-[#2D2D2D];
+}
+
+.mood-card-dark {
+  @apply bg-gradient-to-br from-purple-900/50 to-indigo-900/50;
+}
+
+.nav-item {
+  @apply flex flex-col items-center justify-center space-y-1 rounded-lg p-3 transition-all duration-200;
+}
+
+.nav-item-light {
+  @apply hover:bg-[#8EB1C7]/20;
+}
+
+.nav-item-dark {
+  @apply hover:bg-purple-900/20;
+}
+
+.habit-card {
+  @apply relative overflow-hidden rounded-xl p-4 transition-all duration-300;
+}
+
+.habit-card-light {
+  @apply bg-[#8EB1C7]/20 shadow-sm hover:shadow-md;
+}
+
+.habit-card-dark {
+  @apply bg-gradient-to-br from-purple-900/30 to-indigo-900/30 shadow-lg shadow-purple-900/10;
+}
+
+.quote-box {
+  @apply rounded-xl p-4 text-center font-medium italic transition-all duration-300;
+}
+
+.quote-box-light {
+  @apply bg-[#8EB1C7]/30 text-[#2D2D2D];
+}
+
+.quote-box-dark {
+  @apply bg-gradient-to-r from-purple-900/30 to-indigo-900/30 text-purple-100;
+}
+
+/* Animation Classes */
+.mood-transition {
+  @apply transition-all duration-500;
+}
+
+.mood-hover {
+  @apply hover:scale-105 transition-transform duration-200;
+}
+
+.mood-active {
+  @apply active:scale-95 transition-transform duration-100;
+}
+
+/* Custom FAB color */
+.fab-button {
+  @apply bg-[#FFB74D] text-white hover:bg-[#FFB74D]/90;
+}
